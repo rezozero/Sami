@@ -176,21 +176,21 @@
 {% endblock %}
 
 {% block methods %}
-    <div class="container-fluid underlined">
+    <div id="methods-summary" class="container-fluid underlined">
         {% for method in methods %}
             <div class="row">
-                <div class="col-md-2 type">
+                <div class="col-md-2 type method-hint">
                     {% if method.static %}static&nbsp;{% endif %}{{ hint_link(method.hint) }}
                 </div>
-                <div class="col-md-8 type">
-                    <a href="#method_{{ method.name }}">{{ method.name }}</a>{{ block('method_parameters_signature') }}
+                <div class="col-md-6 type">
+                    <a class="signature" href="#method_{{ method.name }}">{{ method.name }}</a>{{ block('method_parameters_signature') }}
                     {% if not method.shortdesc %}
                         <p class="no-description">No description</p>
                     {% else %}
-                        <p>{{ method.shortdesc|desc(class) }}</p>
+                        <p class="method-description">{{ method.shortdesc|desc(class) }}</p>
                     {%- endif %}
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 method-inheritance">
                     {%- if method.class is not sameas(class) -%}
                         <small>from&nbsp;{{ method_link(method, false, true) }}</small>
                     {%- endif -%}
