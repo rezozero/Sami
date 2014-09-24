@@ -2,12 +2,12 @@
 
 {% block content %}
     <div id="content">
+        {{ block('menu') }}
         <div id="left-column">
             {{ block('control_panel') }}
             {{ block('leftnav') }}
         </div>
         <div id="right-column">
-            {{ block('menu') }}
             {% block below_menu '' %}
             <div id="page-content">
                 {% block page_content '' %}
