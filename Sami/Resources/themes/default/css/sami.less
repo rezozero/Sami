@@ -1,6 +1,8 @@
 @import "elements.less";
 @import "vars.less";
 
+@import "rz-header.less";
+
 html, body, #content {
     height: 100%;
     font-size: 13px;
@@ -39,7 +41,7 @@ h4, .h4 {
     height: @header-height;
 
     position: fixed;
-    top: 0;
+    top: @rz-header-height;
     left: 0;
     right: 0;
     z-index: 99;
@@ -90,7 +92,7 @@ h4, .h4 {
 
 #right-column {
     margin-left: 25%;
-    padding-top: @header-height;
+    padding-top: @header-height + @rz-header-height;
 }
 
 #page-content {
@@ -103,7 +105,7 @@ h4, .h4 {
     //border-right: 1px solid #ccc;
     line-height: 18px;
     font-size: 13px;
-    top: @header-height;
+    top: @header-height + @rz-header-height;
     bottom: @header-height;
 }
 
