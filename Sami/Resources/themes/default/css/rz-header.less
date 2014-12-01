@@ -22,12 +22,19 @@
         background-color: #fff;
         color: @rezozero-header-color;
         margin: 0;
+
+        background-image: url(../img/header@2x.png);
+        background-size: 300px 50px;
+        background-position: 0 0;
+
+        text-indent: -9999px;
     }
 
     ul {
         display: inline-block;
         margin: 0 30px 0 0;
         vertical-align: top;
+        padding: 0px;
     }
     li {
         display: inline-block;
@@ -59,15 +66,21 @@
             }
         }
     }
-    a{
-      display: block;
-      color: #EEE;
-      padding: 19px 20px;
-      font-size: 11px;
-      height: 50px;
-      .box-sizing();
-      text-transform: uppercase;
-      letter-spacing: 0.05em;}
+    a {
+        display: block;
+        color: #EEE;
+        padding: 19px 20px;
+        font-size: 11px;
+        height: 50px;
+        .box-sizing();
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
 
     .socials{
         a{
@@ -77,5 +90,11 @@
     .fa-github:before {
         font-size: 25px;
         line-height: 12px;
+    }
+}
+
+@media (max-width: 991px) {
+    #rezozero-header {
+        display:none;
     }
 }
