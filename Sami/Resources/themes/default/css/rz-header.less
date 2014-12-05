@@ -69,8 +69,10 @@
         }
     }
 
-    &:hover{
+    &:hover, &:focus{
         background: lighten(#c8c8c8, 17%);
+        color: #c8c8c8;
+        outline:none;
     }
 
     &:last-child{
@@ -88,8 +90,9 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
 
-    &.fa-github{
-        font-size: 20px;
+    &.roadiz-icon-github{
+        font-size: 18px;
+        line-height: @rz-header-height;
     }
 
     &:hover{
