@@ -23,6 +23,12 @@
   .opacity(1);
 }
 
+.text-ellipsis(){
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 .gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
   background: @color;
   background: -webkit-gradient(linear,
@@ -39,6 +45,15 @@
   background: -o-linear-gradient(@stop,
                                  @start);
   filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@stop,@start));
+}
+
+.gradient-or (@origin: top, @start: #fff, @stop: #000) {
+    background-color: @start;
+    background-image: -webkit-linear-gradient(@origin, @start, @stop);
+    background-image: -moz-linear-gradient(@origin, @start, @stop);
+    background-image: -o-linear-gradient(@origin, @start, @stop);
+    background-image: -ms-linear-gradient(@origin, @start, @stop);
+    background-image: linear-gradient(@origin, @start, @stop);
 }
 
 .bw-gradient(@color: #F5F5F5, @start: 0, @stop: 255) {
@@ -76,6 +91,7 @@
   -webkit-border-radius: @radius;
   -moz-border-radius:    @radius;
   border-radius:         @radius;
+  behavior: url(/PIE.htc);
 }
 
 .border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
@@ -284,12 +300,12 @@
 }
 
 .keep-image-aspect(){
-  image-rendering:       optimizeSpeed;             /* Legal fallback                 */
-  image-rendering:       pixellated;                /* Firefox                        */
-  image-rendering:       -o-crisp-edges;            /* Opera                          */
+  image-rendering:       optimizeSpeed;             /* Legal fallback                 */
+  image-rendering:       pixellated;                /* Firefox                        */
+  image-rendering:       -o-crisp-edges;            /* Opera                          */
   image-rendering:       -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
-  image-rendering:       optimize-contrast;         /* CSS3 Proposed                  */
-  -ms-interpolation-mode:nearest-neighbor;          /* IE8+ */
+  image-rendering:       optimize-contrast;         /* CSS3 Proposed                  */
+  -ms-interpolation-mode:nearest-neighbor;          /* IE8+ */   
 }
 
 .color-placeholder(@color) {

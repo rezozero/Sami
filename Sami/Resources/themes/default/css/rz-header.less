@@ -1,100 +1,122 @@
-#rezozero-header {
-    position: fixed;
-    background: @rezozero-header-color;
-    z-index: 9999;
-    width: 100%;
+#rezozero-header{
+  position: fixed;
+  .gradient-or(top, #ebebeb 50%, #e3e3e3 100%);
+  z-index: 10;
+  width: 100%;
+  height: @rz-header-height;
+  color: #EEE;
+  padding: 0px;
+}
+
+.rezozero-title{
+    display: inline-block; 
+    vertical-align: top;
+    margin:0;
+}
+    
+#rezozero-title-link{
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    font-size: 11px;
+    line-height: @rz-header-height;
     height: @rz-header-height;
+    text-transform: uppercase;
+    font-weight: 600;
+    width: 299px;
+    color: #60707e;
+    .transition(0.4s background ease-out);
 
-    color: #EEE;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-
-    padding: 0px;
-
-    .rezozero-title{
-        display: inline-block;
-        font-size: 18px;
-        padding: 14px 10px;
-        height: @rz-header-height;
-        width: 300px;
-        .box-sizing();
-        background-color: #fff;
-        color: @rezozero-header-color;
-        margin: 0;
-
-        background-image: url(../img/header@2x.png);
-        background-size: 300px 50px;
-        background-position: 0 0;
-
-        text-indent: -9999px;
-    }
-
-    ul {
-        display: inline-block;
-        margin: 0 30px 0 0;
-        vertical-align: top;
-        padding: 0px;
-    }
-    li {
-        display: inline-block;
-        position: relative;
-        color: #c8c8c8;
-        .box-sizing();
-
-        &:before {
-            content: '';
-            background-color: #828282;
-            width: 1px;
-            height: 37px;
-            display: inline-block;
-            position: absolute;
-            left: 0px;
-            top: 0px ;
-        }
-
-        &.active,
-        &:hover{
-            background: lighten(@rezozero-header-color, 5%);
-        }
-
-        &:first-child{
-            &:before{
-                background-color: transparent;
-                width: 0;
-                height: 0;
-            }
-        }
-    }
-    a {
-        display: block;
-        color: #EEE;
-        padding: 19px 20px;
-        font-size: 11px;
-        height: 50px;
-        .box-sizing();
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
+    &:hover{
+        background: lighten(#c8c8c8, 17%);
         text-decoration: none;
-
-        &:hover {
-            text-decoration: none;
-        }
+        color: #60707e;
     }
 
-    .socials{
-        a{
-            padding: 20px 10px 10px;
-        }
-    }
-    .fa-github:before {
-        font-size: 25px;
-        line-height: 12px;
+    i{
+        margin-right: 15px;
+        color: #323232;
+        font-size: 20px;
+        font-weight: normal;
+        line-height: @rz-header-height;
     }
 }
 
-@media (max-width: 991px) {
-    #rezozero-header {
-        display:none;
+  #rezozero-header-links-list{
+    display: inline-block;
+    margin: 0;
+    padding:0;
+    vertical-align: top;
+    list-style-type: none;
+  }
+
+.rezozero-header-link-item{
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    color: #c8c8c8;
+    border-left: 1px solid #cccccc;
+    font-weight: 600;
+    .transition(0.4s background ease-out);
+
+    &.active{
+        background: #fff;
+        cursor: default;
+
+        &:hover{
+            background: #fff;
+            color: #c8c8c8;
+        }
     }
+
+    &:hover{
+        background: lighten(#c8c8c8, 17%);
+    }
+
+    &:last-child{
+        border-right: none;
+    }
+}
+
+.rezozero-header-link{
+    display: block;
+    color: #656565;
+    padding: 0 20px;
+    font-size: 11px;
+    line-height: @rz-header-height;
+    height: @rz-header-height;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    &.fa-github{
+        font-size: 20px;
+    }
+
+    &:hover{
+        color: #656565;
+        text-decoration: none;
+    }
+}
+
+
+// Ribbon
+
+#alpha-ribbon{
+    position: fixed;
+    top:0; right:0; 
+    width:120px; height:120px;
+    overflow: hidden;
+    z-index:12;
+}
+
+#alpha-ribbon-inner{
+    position: relative;
+    top:-31px; right:-22px;
+    width:180px; height:25px;
+    font-size:11px; line-height:25px;
+    text-align: center; text-transform: uppercase;
+    background: @main-contrast-color;
+    color:#fff;
+    .transform(rotate(45deg));
+    .transform-origin(0,0);
 }
