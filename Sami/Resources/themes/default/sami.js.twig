@@ -217,9 +217,13 @@ $(function() {
 {% endmacro %}
 
 {% macro element(tree, opened, depth) %}
+    {% spaceless %}
     <ul>
         {%- for element in tree -%}
+            <!-- {{ element[1] }} -->
+            <!-- {{ element[0] }} -->
             {% if element[2] %}
+
                 <li data-name="namespace:{{ element[1]|replace({'\\': '_'}) }}" {% if depth < opened %}class="opened"{% endif %}>
                     <div style="padding-left:{{ depth * 18 }}px" class="hd">
                         <span class="glyphicon glyphicon-play"></span>{% if not project.config('simulate_namespaces') %}<a href="{{ namespace_path(element[1]) }}">{% endif %}{{ element[0] }}{% if not project.config('simulate_namespaces') %}</a>{% endif %}
@@ -237,4 +241,5 @@ $(function() {
             {% endif %}
         {%- endfor %}
     </ul>
+    {% endspaceless %}
 {% endmacro %}

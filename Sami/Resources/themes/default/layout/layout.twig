@@ -19,14 +19,14 @@
 
 {% block menu %}
     <nav id="rezozero-header">
-        <h1 class="rezozero-title"><a id="rezozero-title-link" href="http://www.roadiz.io"><i class="roadiz-icon-roadiz"></i>Modern CMS</a></h1><!--
+        <h1 class="rezozero-title"><a id="rezozero-title-link" href="{{ path('index.html') }}"><i class="roadiz-icon-roadiz"></i>Modern CMS</a></h1><!--
         --><ul id="rezozero-header-links-list"><!--
         --><li class="rezozero-header-link-item"><a class="rezozero-header-link" href="http://www.roadiz.io">Get the tour</a></li><!--
            --><li class="rezozero-header-link-item"><a class="rezozero-header-link" href="http://docs.roadiz.io">Documentation</a></li><!--
            --><li class="rezozero-header-link-item active"><a class="rezozero-header-link" href="{{ path('index.html') }}">API</a></li><!--
           --><li class="rezozero-header-link-item"><a class="rezozero-header-link social-link roadiz-icon-github" target="_blank" href="https://github.com/roadiz/roadiz"></a></li>
         </ul>
-    </nav>    
+    </nav>
     <div id="alpha-ribbon"><div id="alpha-ribbon-inner">Alpha version</div></div>
     <nav id="site-nav" class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
