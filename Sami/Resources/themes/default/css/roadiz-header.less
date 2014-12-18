@@ -127,26 +127,21 @@
     }
 }
 
-
-.alpha-ribbon{
+#alpha-ribbon{
+    position: fixed;
+    top:@rz-header-height; right:0; 
     width:120px; height:120px;
     overflow: hidden;
-}
-
-#main-alpha-ribbon{
-    position: fixed;
-    top:45px; right:0;
     z-index:995;
 }
 
-.alpha-ribbon-inner{
+#alpha-ribbon-inner{
     position: relative;
-    top:-18px; right:-17px;
+    top:-31px; right:-22px;
     width:180px; height:25px;
     font-size:11px; line-height:25px;
-    font-weight: bold;
     text-align: center; text-transform: uppercase;
-    background: #c3ae95;
+    background: @main-contrast-color;
     color:#fff;
     .transform(rotate(45deg));
     .transform-origin(0,0);
